@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/RED%20HAT/Documents/top%20edit.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Believe_intuitions</title>
+    <!-- Bootstrap CSS link -->
+    <link href="./Believe_intuitions1_files/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="./Believe_intuitions1_files/all.min.css">
+
+    <style>
+        /* Proceed to Checkout Button */
+        #checkout-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            border-radius: 4px;
+            max-width: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+    
+        #checkout-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    
+         /* Order Information Form */
+    #order-form {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 400px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        text-align: left; /* Align text to the left */
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Input Styles */
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Button Styles */
+    .button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+        /* Cart Table */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    
+        .cart-table th,
+        .cart-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+    
+        .cart-table th {
+            background-color: #f5f5f5;
+        }
+    
+        .cart-table td {
+            vertical-align: top;
+        }
+    
+        /* Responsive styles for cart table */
+        @media (max-width: 768px) {
+            .cart-table {
+                font-size: 14px;
+            }
+        }
+   
+       /* Shopping Cart */
+    #cart {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 400px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Cart Item Styles */
+    #cart p {
+        text-align: left;
+        color: #333;
+    }
+
+    /* Input Styles */
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('C:\Users\RED HAT\Downloads\ground1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product {
+            flex: 0 0 calc(25% - 40px);
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 400px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            animation: fadeIn 1s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        .product h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #555;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+
+        .product p {
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .product p:last-child {
+            margin-bottom: 0;
+        }
+
+        .product button {
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .product button:hover {
+            filter: brightness(90%);
+        }
+
+        .product .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px; /* Adjust for spacing between products */
+}
+
+/* CSS for each product item */
+.product {
+    width: calc(25% - 20px); /* 25% width minus margin */
+    margin: 10px; /* Add space between products */
+    /* Other styles for individual products */
+}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        blockquote, .popup {
+            display: none;
+            opacity: 0;
+            font-style: italic;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #f44336;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            transition: opacity 0.5s ease;
+        }
+
+        .product:hover blockquote {
+            display: block;
+            opacity: 1;
+        }
+
+        .popup.show {
+            display: block;
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+     
+    
+        /* Styles for the cart popup */
+    .popup-content {
+        background-color: #fff;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+    }
+
+    .popup-content h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    .total-price {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    /* Styles for the "Buy Now" button */
+    #buy-button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #buy-button:hover {
+        background-color: #218838;
+    }
+</style>
+
+
+
+    
+</head>
+<body>
+    <header>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1>Believe_intuitions</h1>
+            </div>
+            <div class="header-search-bar">
+                <form class="d-flex">
+                    
+                </form>
+            </div>
+            
+                <!-- Cart button -->
+                <button class="btn btn-success cart-button" id="cart-button">
+                    <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+                </button>
+            </div>
+        
+        <nav>
+            <ul>
+                <li><a href="file:///C:/Users/RED%20HAT/Documents/top%20edit.html#">Home</a></li>
+                <li><a href="file:///C:/Users/RED%20HAT/Documents/top%20edit.html#">Shop</a></li>
+                <li><a href="file:///C:/Users/RED%20HAT/Documents/top%20edit.html#">About</a></li>
+                <li><a href="file:///C:/Users/RED%20HAT/Documents/top%20edit.html#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+     
+        <div class="product-container"> <!-- Product container added -->
+        
+            <div class="product">
+                <div class="badge">New</div>
+                <h2>Beautiful Necklace</h2>
+                <img src="./Believe_intuitions1_files/img1.gif" alt="img1.gif">
+                <p>Description: This stunning necklace features a delicate design with sparkling crystals, perfect for any special occasion.</p>
+                <p>Price: $99.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Elegant Earrings</h2>
+                <img src="./Believe_intuitions1_files/imgring.gif" alt="imgring.gif">
+                <p>Description: These elegant earrings are crafted with genuine pearls and add a touch of sophistication to your ensemble.</p>
+                <p>Price: $79.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <div class="badge">Sale</div>
+                <h2>Chic Bracelet</h2>
+                <img src="./Believe_intuitions1_files/img3.gif" alt="img3.gif">
+                <p>Description: A chic bracelet with intricate filigree work, it's the perfect accessory to elevate your style.</p>
+                <p>Price: <span style="text-decoration: line-through;">$79.99</span> $59.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="badge">New</div>
+                <h2>Beautiful Necklace</h2>
+                <img src="C:\Users\RED HAT\Downloads\img1.gif" alt="img1.gif">
+                <p>Description: This stunning necklace features a delicate design with sparkling crystals, perfect for any special occasion.</p>
+                <p>Price: $99.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart('Jewelry Item 1', 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Elegant Earrings</h2>
+                <img src="C:\Users\RED HAT\Downloads\imgring.gif" alt="imgring.gif">
+                <p>Description: These elegant earrings are crafted with genuine pearls and add a touch of sophistication to your ensemble.</p>
+                <p>Price: $79.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart('Jewelry Item 1', 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <div class="badge">Sale</div>
+                <h2>Chic Bracelet</h2>
+                <img src="C:\Users\RED HAT\Downloads\img3.gif" alt="img3.gif">
+                <p>Description: A chic bracelet with intricate filigree work, it's the perfect accessory to elevate your style.</p>
+                <p>Price: <span style="text-decoration: line-through;">$79.99</span> $59.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart('Jewelry Item 1', 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+    
+            <!-- Add more product sections here -->
+    
+            <div class="product">
+                <h2>Stylish Ring</h2>
+                <img src="./Believe_intuitions1_files/img4.gif" alt="img4.gif">
+                <p>Description: This stylish ring showcases a brilliant-cut diamond in a rose gold setting, a timeless symbol of love and beauty.</p>
+                <p>Price: $89.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Stylish Ring</h2>
+                <img src="./Believe_intuitions1_files/img5.gif" alt="img5.gif">
+                <p>Description: This stylish ring showcases a brilliant-cut diamond in a rose gold setting, a timeless symbol of love and beauty.</p>
+                <p>Price: $89.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Stylish Ring</h2>
+                <img src="./Believe_intuitions1_files/img6.gif" alt="img6.gif">
+                <p>Description: This stylish ring showcases a brilliant-cut diamond in a rose gold setting, a timeless symbol of love and beauty.</p>
+                <p>Price: $89.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Stylish Ring</h2>
+                <img src="./Believe_intuitions1_files/img2.gif" alt="img2.gif">
+                <p>Description: This stylish ring showcases a brilliant-cut diamond in a rose gold setting, a timeless symbol of love and beauty.</p>
+                <p>Price: $89.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <h2>Stylish Ring</h2>
+                <img src="file:///C:/Users/RED%20HAT/Documents/ring.jpg" alt="Ring">
+                <p>Description: This stylish ring showcases a brilliant-cut diamond in a rose gold setting, a timeless symbol of love and beauty.</p>
+                <p>Price: $89.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <div class="product">
+                <div class="badge">New</div>
+                <h2>Glamorous Tiara</h2>
+                <img src="file:///C:/Users/RED%20HAT/Documents/tiara.jpg" alt="Tiara">
+                <p>Description: This glamorous tiara adds a touch of royalty and elegance to your special moments and makes you feel like a princess.</p>
+                <p>Price: $149.99</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-success buy-now">Buy Now</button>
+                    <button class="button glow-button" onclick="addToCart(&#39;Jewelry Item 1&#39;, 100)">Add to Cart</button>
+                </div>
+            </div>
+    
+            <!-- Add more product sections here -->
+            
+        </div>
+
+
+        
+         <!-- Cart Section -->
+    <!--<h1>Shopping Cart</h1> -->
+    <div id="cart" style="
+    margin-right: 10px;
+"><div><p>Jewelry Item 1 - $100</p></div><div><p>Jewelry Item 1 - $100</p></div><div><p>Jewelry Item 1 - $100</p></div></div>
+
+    <!-- Order Form -->
+    <div id="order-form" style="display: block;margin-left: 10px;margin-right: 10px;">
+        <h2>Order Information</h2>
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" placeholder="Your Full Name"><br>
+
+        <label for="location">Location Details:</label>
+        <input type="text" id="location" placeholder="Your Location"><br>
+
+        <label for="pin-code">Pin Code:</label>
+        <input type="text" id="pin-code" placeholder="Your Pin Code"><br>
+
+        <button class="button glow-button" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <!-- Proceed to Checkout Button -->
+    
+
+
+    <!-- Order Summary -->
+    <div id="order-summary" style="display: none;">
+                <h2>Order Summary</h2>
+                <p>Full Name: dsfae</p>
+                <p>Location: adsrfva</p>
+                <p>Pin Code: aresfvs</p>
+                <h3>Order Items:</h3>
+            <p>Jewelry Item 1 - $100</p><p>Jewelry Item 1 - $100</p><p>Jewelry Item 1 - $100</p></div>
+
+    <script src="./Believe_intuitions1_files/email.min.js.download"></script>
+    <script>
+        // JavaScript Code
+        let cartItems = [];
+        let userInformation = {};
+
+        // Function to hide the Proceed to Checkout button
+        function hideCheckoutButton() {
+            const checkoutButton = document.getElementById("checkout-button");
+            checkoutButton.style.display = "none";
+        }
+
+        // Function to show the Proceed to Checkout button
+        function showCheckoutButton() {
+            const checkoutButton = document.getElementById("checkout-button");
+            checkoutButton.style.display = "block";
+        }
+
+        // Function to hide the Order Information form
+        function hideOrderForm() {
+            const orderForm = document.getElementById("order-form");
+            orderForm.style.display = "none";
+        }
+
+        // Function to show the Order Information form
+        function showOrderForm() {
+            showCheckoutButton(); // Show the Proceed to Checkout button
+            hideOrderSummary(); // Hide the Order Summary
+            const orderForm = document.getElementById("order-form");
+            orderForm.style.display = "block";
+        }
+
+        // Function to hide the Order Summary
+        function hideOrderSummary() {
+            const orderSummary = document.getElementById("order-summary");
+            orderSummary.style.display = "none";
+        }
+
+        // Function to show the Order Summary
+        function showOrderSummary() {
+            const orderSummary = document.getElementById("order-summary");
+            orderSummary.style.display = "block";
+        }
+
+        function addToCart(productName, price) {
+            const item = { productName, price };
+            cartItems.push(item);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartContainer = document.getElementById("cart");
+            cartContainer.innerHTML = "";
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = "<p>Cart is empty</p>";
+            } else {
+                cartItems.forEach(item => {
+                    const cartItem = document.createElement("div");
+                    cartItem.innerHTML = `<p>${item.productName} - $${item.price}</p>`;
+                    cartContainer.appendChild(cartItem);
+                });
+            }
+        }
+
+        function confirmOrder() {
+            const fullName = document.getElementById("full-name").value;
+            const location = document.getElementById("location").value;
+            const pinCode = document.getElementById("pin-code").value;
+
+            if (!fullName || !location || !pinCode) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            hideOrderForm(); // Hide the Order Information form
+            showCheckoutButton(); // Show the Proceed to Checkout button
+            showOrderSummary(); // Show the Order Summary
+
+            userInformation = {
+                fullName,
+                location,
+                pinCode
+            };
+
+            // Display the order summary at the end of the page
+            displayOrderSummary();
+
+            // Simulate sending an email (client-side, not recommended for production)
+            const emailService = emailjs;
+            emailService.init("user_your_user_id"); // Replace with your Email.js user ID
+            emailService.send("default_service", "template_name", {
+                to_email: "prashanthinge@17.com", // Replace with the recipient's email address
+                full_name: fullName,
+                location_details: location,
+                pin_code: pinCode,
+                cart: JSON.stringify(cartItems),
+            }).then(function(response) {
+                if (response.status === 200) {
+                    alert("Order confirmed! Your order details have been sent via email.");
+                    cartItems = [];
+                    updateCartDisplay();
+                } else {
+                    alert("There was an error sending the email. Please try again later.");
+                }
+            });
+        }
+
+        function displayOrderSummary() {
+            const orderSummaryContainer = document.getElementById("order-summary");
+            orderSummaryContainer.innerHTML = `
+                <h2>Order Summary</h2>
+                <p>Full Name: ${userInformation.fullName}</p>
+                <p>Location: ${userInformation.location}</p>
+                <p>Pin Code: ${userInformation.pinCode}</p>
+                <h3>Order Items:</h3>
+            `;
+
+            if (cartItems.length === 0) {
+                orderSummaryContainer.innerHTML += "<p>No items in the cart.</p>";
+            } else {
+                cartItems.forEach(item => {
+                    orderSummaryContainer.innerHTML += `<p>${item.productName} - $${item.price}</p>`;
+                });
+            }
+        }
+    </script>
+
+
+    <!-- Bootstrap JavaScript and jQuery -->
+    <script src="./Believe_intuitions1_files/jquery-3.5.1.slim.min.js.download"></script>
+    <script src="./Believe_intuitions1_files/bootstrap.bundle.min.js.download"></script>
+
+
+</main></body></html>
